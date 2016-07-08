@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><registration>
+  <!--  <server base-url="http://localhost:7819/RTCP/" security-token="" /> -->
+  <server base-url="http://localhost:7819/RTCP"/>
+  <logger level="warn"/>
+  
+  <!-- 
+	The optional identifier name can be used to help identify an instance of the JDBC proxy. 
+	The name will be displayed in Rational Test Control Panel
+  -->
+  <!-- 
+  <identifier name="identifier"/>
+  -->
+    
+  <!--
+   The GreenHat JDBC driver does not need to register against a specific domain
+   or environment. By default it will proxy for all domains/environments. If
+   you wish to restrict its use then add <domain> entries based on the example
+   below. Each domain may have 0 or more environments.
+  -->
+  <!--
+  <domains>
+    <domain name="testDomain">
+      <environment name="testEnvironment"/>
+    </domain>
+  </domains>
+  -->
+  
+  <!--
+    When the proxy registers with Rational Test Control Panel, it can gather usage statistics immediately.
+	If statistics will not be required, the initial state can be set to "off". 
+  -->
+  <statistics initial-state="on"/>
+    
+  <!--
+   By default, the JDBC driver will intercept all of the JDBC connections that
+   the application makes. To explicitly enable or disable the driver for specific
+   connections you can use <includes>, <excludes> or a combination of <includes>
+   and <excludes> sections.
+   
+   Each include or exclude is treated as a case-insensitive prefix for connection
+   URLs, so you may either specify the complete URL, or you can control several
+   similar connections with a prefix.
+   
+   The order of <includes> and <excludes> sections in this file does not affect
+   the outcome: all includes are considered first, and then all excludes are applied.
+   Note that an empty <includes> section disables the driver.
+  -->
+  <!--
+  <includes>
+  	<include>jdbc:db2://host:port/database</include>
+  	<include>jdbc:oracle:thin:@host:port:database</include>
+  </includes>
+  -->
+  <!--
+  <excludes>
+  	<exclude>jdbc:db2://host:port/database</exclude>
+  	<exclude>jdbc:oracle:thin:@host:port:database</exclude>
+  </excludes>
+  -->
+  
+</registration>
